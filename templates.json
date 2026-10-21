@@ -1,0 +1,3357 @@
+{
+  "schema_version": 1,
+  "categories": [
+    {
+      "key": "AC",
+      "name": "学术写作",
+      "file": "references/01-academic.md"
+    },
+    {
+      "key": "WR",
+      "name": "内容创作",
+      "file": "references/02-writing.md"
+    },
+    {
+      "key": "CD",
+      "name": "编程",
+      "file": "references/03-coding.md"
+    },
+    {
+      "key": "PD",
+      "name": "产品与项目",
+      "file": "references/04-product-project.md"
+    },
+    {
+      "key": "AN",
+      "name": "分析与决策",
+      "file": "references/05-analysis-decision.md"
+    },
+    {
+      "key": "LC",
+      "name": "学习与职场",
+      "file": "references/06-learning-career.md"
+    },
+    {
+      "key": "CL",
+      "name": "创意与生活",
+      "file": "references/07-creative-life.md"
+    },
+    {
+      "key": "MT",
+      "name": "元提示词",
+      "file": "references/09-meta.md"
+    },
+    {
+      "key": "LG",
+      "name": "法律",
+      "file": "references/10-legal.md"
+    },
+    {
+      "key": "EN",
+      "name": "语言学习与翻译",
+      "file": "references/11-language.md"
+    },
+    {
+      "key": "MD",
+      "name": "医疗健康",
+      "file": "references/13-medical.md"
+    },
+    {
+      "key": "ED",
+      "name": "教育",
+      "file": "references/14-education.md"
+    }
+  ],
+  "templates": [
+    {
+      "key": "ac-01",
+      "id": "AC-01",
+      "category": "AC",
+      "name": "选题挖掘与研究缺口",
+      "level": "L3",
+      "use": "不知道写什么，或手上有个方向但不确定能不能做完。",
+      "materials": {
+        "required": [
+          "学科、研究层次与具体方向",
+          "可用数据或实验条件、剩余时间与毕业要求"
+        ],
+        "optional": [
+          "已读代表文献",
+          "技能短板"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需确认研究现状或缺口而用户未提供可核实文献时检索相关文献。"
+      },
+      "fallback": {
+        "missing_materials": "缺方向或条件时只给选题筛选表及需补信息，不排序具体可行选题。",
+        "offline": "按已有文献和资源提出候选问题，未核实的新颖性仅列检索方向。",
+        "missing_facts": "不编毕业条件、可获取数据或文献结论；缺口标待证实，预期收益不当实测。"
+      }
+    },
+    {
+      "key": "ac-02",
+      "id": "AC-02",
+      "category": "AC",
+      "name": "开题报告",
+      "level": "L3",
+      "use": "硕博开题、立项申请、研究计划书。",
+      "materials": {
+        "required": [
+          "拟定题目、学科与研究层次",
+          "实际可用条件和已有研究基础"
+        ],
+        "optional": [
+          "篇幅规范",
+          "已核实相关文献与基线",
+          "进度要求"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "研究现状、具体团队或基线缺少可核实来源时检索；最新研究判断需核对日期。"
+      },
+      "fallback": {
+        "missing_materials": "只给开题章节结构和问题方法对应表，不代填前期实验与资源。",
+        "offline": "有来源部分可写；无来源的现状、创新对照仅列检索清单。",
+        "missing_facts": "方法参数和预期改善写待确认或计划假设，不伪装已完成实验。"
+      }
+    },
+    {
+      "key": "ac-03",
+      "id": "AC-03",
+      "category": "AC",
+      "name": "文献综述",
+      "level": "L3",
+      "use": "综述章节、开题现状部分、独立综述文章。",
+      "materials": {
+        "required": [
+          "综述主题与用途",
+          "文献清单及核心结论、方法或摘要合集"
+        ],
+        "optional": [
+          "篇幅要求",
+          "本人研究信息"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "无文献时给综述分组与文献提取表，不写具体研究结论。",
+        "offline": "仅根据已给文献组织论证，补充材料只列检索方向。",
+        "missing_facts": "摘要未支撑的方法细节或研究盲区标证据不足，不补具体引用。"
+      }
+    },
+    {
+      "key": "ac-04",
+      "id": "AC-04",
+      "category": "AC",
+      "name": "摘要与关键词",
+      "level": "L2",
+      "use": "论文投稿前的摘要，有严格字数限制。",
+      "materials": {
+        "required": [
+          "论文全文或研究问题、方法、实际结果与结论"
+        ],
+        "optional": [
+          "目标期刊摘要规范",
+          "题目、语言及字数上限"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需按目标期刊最新摘要规范定稿而用户未提供规范时检索官网。"
+      },
+      "fallback": {
+        "missing_materials": "缺论文事实时只给五部分摘要骨架与结果填报清单。",
+        "offline": "使用已给摘要规范；未知期刊规范列核查项，先写有证据草稿。",
+        "missing_facts": "没有的数字、基线差异与显著性不写；缺结果则相应位置待补。"
+      }
+    },
+    {
+      "key": "ac-05",
+      "id": "AC-05",
+      "category": "AC",
+      "name": "引言",
+      "level": "L2",
+      "use": "Introduction 写不动，或写成了背景资料堆砌。",
+      "materials": {
+        "required": [
+          "论文题目、研究问题与核心贡献或摘要",
+          "最接近的相关工作及其可核实内容"
+        ],
+        "optional": [
+          "目标期刊",
+          "篇幅",
+          "实验验证材料"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需要补足领域现状或最近相关工作而用户未给可核实文献时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺论文贡献或相关工作时先给漏斗段落提纲，暂停缺陷与贡献对照。",
+        "offline": "依提供文献写有来源的段落，未核实研究只列查询方向。",
+        "missing_facts": "未验证贡献不宣称成立；不能把未知文献缺陷写成确定局限。"
+      }
+    },
+    {
+      "key": "ac-06",
+      "id": "AC-06",
+      "category": "AC",
+      "name": "研究方法",
+      "level": "L3",
+      "use": "方法章节、实验设计、调研方案。",
+      "materials": {
+        "required": [
+          "研究问题",
+          "数据样本的来源、规模及采集情况",
+          "拟采用或需比较的方法与评价目标"
+        ],
+        "optional": [
+          "变量定义与预处理记录",
+          "参数、对照与消融设置"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "方法涉及需核实的外部算法规范或新版本，而所给材料不足时检索原始论文或官方文档。"
+      },
+      "fallback": {
+        "missing_materials": "仅给方法设计填写表与可复现性清单，不编数据来源或参数。",
+        "offline": "可整理已提供实验流程，无法核实的方法细节标待补原始依据。",
+        "missing_facts": "缺参数写未提供；建议配置明确为待验证方案，不写成实际执行配置。"
+      }
+    },
+    {
+      "key": "ac-07",
+      "id": "AC-07",
+      "category": "AC",
+      "name": "结果与讨论",
+      "level": "L3",
+      "use": "数据跑完了，不知道怎么写；或讨论写成了结果的重复。",
+      "materials": {
+        "required": [
+          "研究问题",
+          "实际结果数据、表格或主要数字"
+        ],
+        "optional": [
+          "对比基线及结果",
+          "原先预期",
+          "相关文献"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需要与外部研究对照而未提供可核实文献时检索原始研究。"
+      },
+      "fallback": {
+        "missing_materials": "无结果数据时只给结果讨论的分工结构，不生成发现。",
+        "offline": "可陈述已有结果；缺文献的定位与对照段保留待补。",
+        "missing_facts": "未给显著性不推断显著；机制解释标假设，基线缺失不报提升。"
+      }
+    },
+    {
+      "key": "ac-08",
+      "id": "AC-08",
+      "category": "AC",
+      "name": "学术语体改写",
+      "level": "L2",
+      "use": "论文有 AI 味、翻译腔、口语化，或排比过多。",
+      "materials": {
+        "required": [
+          "待改写原文"
+        ],
+        "optional": [
+          "领域术语表",
+          "明确的编辑边界"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "无原文时给语言自查清单，不能输出冒充原文改写的段落。",
+        "offline": "直接改写已有段落，原文事实问题另列存疑。",
+        "missing_facts": "不补具体研究者、数据或引用；主语无法核实时保留范围限定。"
+      }
+    },
+    {
+      "key": "ac-09",
+      "id": "AC-09",
+      "category": "AC",
+      "name": "审稿意见回复",
+      "level": "L3",
+      "use": "大修、小修，要写 response letter。",
+      "materials": {
+        "required": [
+          "逐条审稿意见",
+          "对应实际改动或不同意的理由"
+        ],
+        "optional": [
+          "修改稿页行号及改后文字",
+          "支撑实验或文献"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺意见时给回复信结构；缺实际改动时只写回应计划，不声称已修改。",
+        "offline": "依已给证据写逐条回复，不把未查文献作为反驳依据。",
+        "missing_facts": "位置未定就标未定；未做实验和未完成改动不能写成已完成。"
+      }
+    },
+    {
+      "key": "ac-10",
+      "id": "AC-10",
+      "category": "AC",
+      "name": "期刊匹配",
+      "level": "L2",
+      "use": "投稿选刊，判断中的概率。",
+      "materials": {
+        "required": [
+          "文章主题、方法与主要贡献",
+          "投稿语言与时间限制"
+        ],
+        "optional": [
+          "摘要或全文",
+          "创新程度自评",
+          "期刊官方数据与核查日期"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需推荐具体期刊及核对近两年同类论文、分区、影响因子或周期，而所给来源不足或过期时检索。"
+      },
+      "fallback": {
+        "missing_materials": "无稿件信息时仅给期刊匹配维度和信息表，不列定向排名。",
+        "offline": "仅比较有来源的期刊；无现行数据时给筛选方法，周期和指标标未提供。",
+        "missing_facts": "不猜影响因子、审稿周期或录用概率；无法评估档位说明贡献证据不足。"
+      }
+    },
+    {
+      "key": "ac-11",
+      "id": "AC-11",
+      "category": "AC",
+      "name": "答辩准备",
+      "level": "L2",
+      "use": "答辩前一周，做 PPT 结构和预设问题。",
+      "materials": {
+        "required": [
+          "论文题目、层次与核心结论",
+          "研究方法、数据及已知薄弱环节的实际说明"
+        ],
+        "optional": [
+          "答辩时长",
+          "全文与图表",
+          "已有PPT"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺论文内容时只给答辩页序和常见问题分类，不能编个人回答。",
+        "offline": "根据现有论文事实准备结构和问题，外部新颖性未核实处标待补证据。",
+        "missing_facts": "数据、参数与证据图号缺失留待准备，不替作者编实验细节。"
+      }
+    },
+    {
+      "key": "ac-12",
+      "id": "AC-12",
+      "category": "AC",
+      "name": "单篇文献精读",
+      "level": "L2",
+      "use": "要快速吃透一篇 paper，或判断它值不值得精读。",
+      "materials": {
+        "required": [
+          "论文全文或摘要、方法、实验部分"
+        ],
+        "optional": [
+          "本人的研究问题",
+          "阅读重点"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "无论文时给阅读提取表；只有摘要时仅分析摘要，不判实验公平性。",
+        "offline": "基于提供的论文做内部证据审查，未读到的补充材料注明未提供。",
+        "missing_facts": "区分作者陈述与推断；缺实验编号和配置不猜作者做法。"
+      }
+    },
+    {
+      "key": "ac-13",
+      "id": "AC-13",
+      "category": "AC",
+      "name": "逐段批注式精读",
+      "level": "L2",
+      "use": "想一段一段啃透一篇文献，边读边批注、提问、标记疑点。",
+      "materials": {
+        "required": [
+          "论文全文（或可逐段提供的文本）"
+        ],
+        "optional": [
+          "本人的研究问题",
+          "重点关注的段落或章节",
+          "术语表"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "无论文时给逐段批注的空模板和提问清单；只有部分段落时只批注已有段落，不臆测缺失内容。",
+        "offline": "基于提供的文本做内部批注与提问，不补充论文未提供的内容。",
+        "missing_facts": "区分作者原文与批注者理解；缺上下文时不猜作者意图，标待补。"
+      }
+    },
+    {
+      "key": "ac-14",
+      "id": "AC-14",
+      "category": "AC",
+      "name": "多篇文献交叉对比",
+      "level": "L3",
+      "use": "手上有几篇相关文献，想横着比方法、结论与证据，找出共识和冲突。",
+      "materials": {
+        "required": [
+          "多篇文献的标题、方法与结论（或各自摘要）",
+          "对比维度或要回答的研究问题"
+        ],
+        "optional": [
+          "各文献的实验设置与数据",
+          "已有笔记"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "只有一篇时降级为单篇精读；缺对比维度时先按方法、结论、证据强度给默认维度。",
+        "offline": "基于提供的文献做交叉对比，不补充未提供文献的信息。",
+        "missing_facts": "只比较各文献明确写了的内容；缺实验细节不替作者补齐，标未提供。"
+      }
+    },
+    {
+      "key": "ac-15",
+      "id": "AC-15",
+      "category": "AC",
+      "name": "参考文献著录格式整理",
+      "level": "L2",
+      "use": "手上有文献信息，要整理成 GB/T 7714、APA、MLA 等规范著录格式。",
+      "materials": {
+        "required": [
+          "文献基本信息（作者、题名、出处、年份等）",
+          "目标著录标准"
+        ],
+        "optional": [
+          "已有文献条目",
+          "DOI 或网址"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需核对文献真实信息或标准现行细则而用户未提供时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺完整著录要素时给出每条还差哪些字段的补全清单，不编造作者、年份、页码、卷期。",
+        "offline": "基于提供的信息按标准排版，不声称已核对文献真实存在。",
+        "missing_facts": "缺作者、年份、卷期、页码或 DOI 不猜填，标待补；标准版本不确定时说明以现行标准为准。"
+      }
+    },
+    {
+      "key": "ac-16",
+      "id": "AC-16",
+      "category": "AC",
+      "name": "论文降重改写",
+      "level": "L2",
+      "use": "查重率过高，把重复句子改写又不改变原意和学术规范。",
+      "materials": {
+        "required": [
+          "待降重的原文段落"
+        ],
+        "optional": [
+          "查重报告标注的重复句",
+          "目标重复率"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "无原文时给降重改写的方法清单（结构重组、语序调整等），不生成具体改写。",
+        "offline": "基于原文做改写，不需要联网。",
+        "missing_facts": "不改变数据、结论和引用归属；专业术语不强行替换。"
+      }
+    },
+    {
+      "key": "wr-01",
+      "id": "WR-01",
+      "category": "WR",
+      "name": "公众号长文",
+      "level": "L2",
+      "use": "行业分析、观点长文、深度稿。",
+      "materials": {
+        "required": [
+          "选题与核心观点",
+          "支撑事实性观点的真实数据、案例或个人经历"
+        ],
+        "optional": [
+          "篇幅",
+          "账号定位与风格样文",
+          "目标读者与语气偏好"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "文章需要当前行业事实、统计或真实外部案例且未给可核实来源时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺选题或观点时给选题提问表；缺证据时给论证提纲，不造案例。",
+        "offline": "可用个人经历和已给证据成文，删去无法核实的时事和统计。",
+        "missing_facts": "事实缺口列待补，观点明确为观点，不用虚构访谈撑论证。"
+      }
+    },
+    {
+      "key": "wr-02",
+      "id": "WR-02",
+      "category": "WR",
+      "name": "小红书笔记",
+      "level": "L2",
+      "use": "种草、经验分享、干货收藏向笔记。",
+      "materials": {
+        "required": [
+          "分享的产品、方法或经历的实际内容"
+        ],
+        "optional": [
+          "真实体验细节",
+          "实拍图情况",
+          "账号语气",
+          "目标读者与发布目的"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺分享内容时给笔记结构和素材采集单，不假装使用过产品。",
+        "offline": "依据用户提供内容写笔记和拍图建议。",
+        "missing_facts": "未知功效与体验不写成亲测，图片未提供时只建议拍什么。"
+      }
+    },
+    {
+      "key": "wr-03",
+      "id": "WR-03",
+      "category": "WR",
+      "name": "短视频口播脚本",
+      "level": "L2",
+      "use": "抖音/视频号口播，60 秒到 3 分钟。",
+      "materials": {
+        "required": [
+          "口播主题",
+          "要讲的实际要点"
+        ],
+        "optional": [
+          "真实案例或产品材料",
+          "口头表达样例",
+          "传播目标",
+          "时长和出镜风格偏好"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺主题时给脚本段落节奏；缺事实时只排结构与待补要点。",
+        "offline": "用已给内容组织口播，不依赖平台实时热榜。",
+        "missing_facts": "不编主播经历和成效数字，未知卖点保留待确认。"
+      }
+    },
+    {
+      "key": "wr-04",
+      "id": "WR-04",
+      "category": "WR",
+      "name": "公文写作",
+      "level": "L2",
+      "use": "通知、请示、报告、函、会议纪要。",
+      "materials": {
+        "required": [
+          "公文文种、发收文主体与事由",
+          "实际依据及办理要求"
+        ],
+        "optional": [
+          "正式格式样例",
+          "上级文件原文",
+          "落款日期"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需援引现行政策或核对正式公文规范，而用户未给有效官方材料时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺事由或主体时仅给相应文种骨架；依据和责任安排不代填。",
+        "offline": "依已给依据写草稿，未知政策与格式列核查项。",
+        "missing_facts": "日期、负责人和文件号未给就标未提供，不编会议决定。"
+      }
+    },
+    {
+      "key": "wr-05",
+      "id": "WR-05",
+      "category": "WR",
+      "name": "产品详情页文案",
+      "level": "L2",
+      "use": "电商详情页、落地页、产品介绍。",
+      "materials": {
+        "required": [
+          "产品真实参数、售价与卖点依据",
+          "目标用户与使用场景"
+        ],
+        "optional": [
+          "竞品价格材料",
+          "真实疑问",
+          "差评与顾虑"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需比较现售竞品价格、性能或证明产品功效且未给有效来源时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺产品资料时只给详情页模块与卖点证据表，不写确定承诺。",
+        "offline": "只写可验证的本品卖点，外部价格比较删去或待补。",
+        "missing_facts": "不虚构评价、认证或效果；未知参数与价格不填估值。"
+      }
+    },
+    {
+      "key": "wr-06",
+      "id": "WR-06",
+      "category": "WR",
+      "name": "技术文档",
+      "level": "L2",
+      "use": "README、API 文档、使用手册。",
+      "materials": {
+        "required": [
+          "项目或接口用途",
+          "实际安装、调用、配置或源代码材料",
+          "技术栈和依赖版本"
+        ],
+        "optional": [
+          "目标读者",
+          "已知坑与验证记录"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "编写依赖具体版本的外部安装命令或API用法且本地材料不足时核查官方文档。"
+      },
+      "fallback": {
+        "missing_materials": "缺实际用法时给文档采集清单与结构，不能交付冒充可运行的README。",
+        "offline": "按已给项目材料写文档，未验证命令标待验证并列所需资料。",
+        "missing_facts": "默认值、版本与配置不能猜；已知坑未提供不编故障经验。"
+      }
+    },
+    {
+      "key": "wr-07",
+      "id": "WR-07",
+      "category": "WR",
+      "name": "改写与润色",
+      "level": "L1",
+      "use": "已有文字要换语气、压缩、扩写、去 AI 味。",
+      "materials": {
+        "required": [
+          "待处理原文"
+        ],
+        "optional": [
+          "风格参考",
+          "必须保留部分",
+          "改写目标、字数和受众偏好"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "无原文时给改写选项清单，不生成替代事实。",
+        "offline": "直接根据原文完成语言编辑。",
+        "missing_facts": "扩写例子只用已有素材；缺细节时提示补充，不增新观点。"
+      }
+    },
+    {
+      "key": "wr-08",
+      "id": "WR-08",
+      "category": "WR",
+      "name": "演讲稿",
+      "level": "L2",
+      "use": "年会、路演、分享会、婚礼致辞。",
+      "materials": {
+        "required": [
+          "演讲场合、听众与时长",
+          "核心信息和必须提及的实际内容"
+        ],
+        "optional": [
+          "演讲者身份和表达习惯",
+          "可用故事"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺核心信息时给演讲段落和计时表，不虚构领导表态或致谢名单。",
+        "offline": "根据用户信息写逐字稿与删减建议。",
+        "missing_facts": "未知业绩、名单和故事列待补，不以虚构经历制造感染力。"
+      }
+    },
+    {
+      "key": "wr-09",
+      "id": "WR-09",
+      "category": "WR",
+      "name": "商务邮件",
+      "level": "L1",
+      "use": "催进度、拒绝、道歉、跨部门沟通、对外合作。",
+      "materials": {
+        "required": [
+          "收件人关系",
+          "邮件目的",
+          "事实经过与具体诉求"
+        ],
+        "optional": [
+          "承诺底线",
+          "时间节点",
+          "既有往来"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺事实时给邮件结构与必要问题，不擅自答应条件。",
+        "offline": "依据给定事实写邮件，无需查询收件人私人信息。",
+        "missing_facts": "未知日期和责任不代填；诉求与已发生事实分开表述。"
+      }
+    },
+    {
+      "key": "wr-10",
+      "id": "WR-10",
+      "category": "WR",
+      "name": "命名与 slogan",
+      "level": "L2",
+      "use": "品牌、产品、项目代号、活动主题。",
+      "materials": {
+        "required": [
+          "命名对象及其定位"
+        ],
+        "optional": [
+          "忌讳词",
+          "语言偏好",
+          "已有名称",
+          "目标人群与调性偏好"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺命名对象时先给定位填写表；调性可明示默认后提出候选。",
+        "offline": "可做创意命名，不声称已核查商标或名称可用性。",
+        "missing_facts": "词源不确定就不讲典故；重名和权利状态列后续核查事项。"
+      }
+    },
+    {
+      "key": "wr-11",
+      "id": "WR-11",
+      "category": "WR",
+      "name": "直播带货话术",
+      "level": "L2",
+      "use": "直播脚本、口播话术、憋单放单节奏。",
+      "materials": {
+        "required": [
+          "商品真实卖点、价格与证据",
+          "主播人设、平台、时长和直播目标"
+        ],
+        "optional": [
+          "可核实活动期限与库存",
+          "适用规则",
+          "成本资料"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需判断现行平台禁限规则、比较价格或功效合规且用户未给有效依据时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺商品材料时给六类话术结构，不写具体销售承诺。",
+        "offline": "只使用已确认现价与产品事实；未知库存、倒计时和规则仅列检查项。",
+        "missing_facts": "不补原价、销量、评价和功效，资质未核实不承诺合规。"
+      }
+    },
+    {
+      "key": "wr-12",
+      "id": "WR-12",
+      "category": "WR",
+      "name": "直播复盘",
+      "level": "L2",
+      "use": "下播后分析数据、找问题、定下一场的改进项。",
+      "materials": {
+        "required": [
+          "本场后台数据及统计口径",
+          "本场目标、商品与直播环节记录"
+        ],
+        "optional": [
+          "逐分钟在线与成交点",
+          "可核实同口径历史基准"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "无后台数据时给复盘数据采集表，不能诊断转化瓶颈。",
+        "offline": "只做本场与已有同口径目标的比较，不补行业均值。",
+        "missing_facts": "缺时间粒度不做环节归因；费用缺失不算利润。"
+      }
+    },
+    {
+      "key": "wr-13",
+      "id": "WR-13",
+      "category": "WR",
+      "name": "选品评估",
+      "level": "L2",
+      "use": "决定播什么品、评估一个品能不能带、建品矩阵。",
+      "materials": {
+        "required": [
+          "账号定位与粉丝情况",
+          "候选品售价、成本或佣金及已知费用",
+          "实际业务模式（未知则暂停依赖主体的收益结论）"
+        ],
+        "optional": [
+          "退货库存资质",
+          "平台规则原文及日期",
+          "竞品数据"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需核实现行平台规则、资质要求或竞品价格销量且所给依据不足时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺候选品及经济参数时给选品信息表，不排盈利优先级。",
+        "offline": "可做有来源的匹配和单位经济分析；规则与竞品信息仅列核查项。",
+        "missing_facts": "缺费用、退货或转化时只列条件公式，不补利润或销量。"
+      }
+    },
+    {
+      "key": "cd-01",
+      "id": "CD-01",
+      "category": "CD",
+      "name": "需求到代码",
+      "level": "L2",
+      "use": "实现一个新功能、写一个脚本、加一个接口。",
+      "materials": {
+        "required": [
+          "功能需求与输入输出约定",
+          "语言框架及版本",
+          "相关现有结构或同类代码",
+          "兼容与部署约束"
+        ],
+        "optional": [
+          "代码风格",
+          "验收样例"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "具体版本API、依赖或安装方式未有本地可靠资料支撑时核查官方文档。"
+      },
+      "fallback": {
+        "missing_materials": "缺需求契约时给接口和验收清单，不能编业务规则实现。",
+        "offline": "可依已有代码与版本材料生成实现；未知API列待验证。",
+        "missing_facts": "假设只用于可逆设计选择；权限、金额规则和兼容版本不猜。"
+      }
+    },
+    {
+      "key": "cd-02",
+      "id": "CD-02",
+      "category": "CD",
+      "name": "Bug 诊断",
+      "level": "L2",
+      "use": "行为不符合预期、偶发错误、找不到原因。",
+      "materials": {
+        "required": [
+          "预期与实际行为",
+          "复现步骤或触发场景",
+          "相关代码、调用方及报错",
+          "运行环境"
+        ],
+        "optional": [
+          "最近变更",
+          "日志",
+          "已有失败测试"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "原因涉及外部依赖兼容或已知版本缺陷且现有材料不能证实时检索官方依据。"
+      },
+      "fallback": {
+        "missing_materials": "缺代码或复现信息时列最小复现采集步骤，不直接认定根因。",
+        "offline": "用现有材料列假设与验证顺序，未证实版本问题保留待查。",
+        "missing_facts": "根因未验证不给确定修复；不编运行结果和日志。"
+      }
+    },
+    {
+      "key": "cd-03",
+      "id": "CD-03",
+      "category": "CD",
+      "name": "代码审查",
+      "level": "L2",
+      "use": "PR review、接手代码时评估质量、上线前自查。",
+      "materials": {
+        "required": [
+          "待审代码与文件位置",
+          "职责和业务上下文"
+        ],
+        "optional": [
+          "数据量级",
+          "调用频率",
+          "重点关注维度"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "无代码时给审查清单，不报具体行号问题。",
+        "offline": "对已给代码做静态审查，环境相关风险标需确认。",
+        "missing_facts": "未知调用契约或权限规则不作确定漏洞；允许未发现阻塞项。"
+      }
+    },
+    {
+      "key": "cd-04",
+      "id": "CD-04",
+      "category": "CD",
+      "name": "重构",
+      "level": "L3",
+      "use": "代码能跑但结构混乱，要动结构不改行为。",
+      "materials": {
+        "required": [
+          "待重构代码",
+          "现有行为和不可更改的接口或兼容约束"
+        ],
+        "optional": [
+          "维护痛点",
+          "测试现状",
+          "现有测试"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺代码时仅给分步重构方法；缺行为约定时先列特征测试需求。",
+        "offline": "依已有代码拆分步骤与测试，不能声称已运行验证。",
+        "missing_facts": "外部调用行为未知标待核对，不以结构改进为由更改业务。"
+      }
+    },
+    {
+      "key": "cd-05",
+      "id": "CD-05",
+      "category": "CD",
+      "name": "单元测试",
+      "level": "L2",
+      "use": "补覆盖率、给关键逻辑上保险。",
+      "materials": {
+        "required": [
+          "待测函数或类及语言",
+          "预期业务行为与输入输出契约",
+          "测试框架"
+        ],
+        "optional": [
+          "历史Bug",
+          "依赖及调用场景",
+          "现有测试"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "无待测实现时给测试矩阵；契约不全时区分观察行为与待确认预期。",
+        "offline": "可编写隔离外部依赖的测试，运行环境缺失注明未执行。",
+        "missing_facts": "不编历史Bug；不把实现当前返回值当作唯一正确预期。"
+      }
+    },
+    {
+      "key": "cd-06",
+      "id": "CD-06",
+      "category": "CD",
+      "name": "SQL 编写与优化",
+      "level": "L2",
+      "use": "复杂查询、慢查询、窗口函数、数据核对。",
+      "materials": {
+        "required": [
+          "数据库类型与版本",
+          "表结构",
+          "查询业务口径"
+        ],
+        "optional": [
+          "慢SQL与执行计划",
+          "索引、行数和增长量"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺表结构或业务口径时给查询设计表，不生成假表名的生产SQL。",
+        "offline": "依给定结构写查询；无执行计划仅列候选瓶颈与测量办法。",
+        "missing_facts": "缺规模不保证索引收益；NULL、粒度和时间规则未定标需确认。"
+      }
+    },
+    {
+      "key": "cd-07",
+      "id": "CD-07",
+      "category": "CD",
+      "name": "正则表达式",
+      "level": "L1",
+      "use": "提取、校验、批量替换。",
+      "materials": {
+        "required": [
+          "匹配目标与用途",
+          "正反真实样例",
+          "正则引擎或使用工具"
+        ],
+        "optional": [
+          "替换目标格式",
+          "输入长度边界"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺规则或样例时给样例征集表；引擎未知时不给确定转义写法。",
+        "offline": "可依样例给正则与解释，未执行验证明确标注。",
+        "missing_facts": "格式合法不等于身份或资源真实，不凭样例声称完全覆盖。"
+      }
+    },
+    {
+      "key": "cd-08",
+      "id": "CD-08",
+      "category": "CD",
+      "name": "报错解读",
+      "level": "L1",
+      "use": "一堆堆栈看不懂、依赖冲突、环境起不来。",
+      "materials": {
+        "required": [
+          "完整报错与堆栈",
+          "系统、语言及依赖环境"
+        ],
+        "optional": [
+          "最近操作",
+          "锁文件",
+          "相关配置"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需要确认冲突包兼容范围或版本专属错误且未给官方依据时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺报错时仅列应提供信息，不凭印象给升级命令。",
+        "offline": "按堆栈解释直接原因并列本地检查顺序，兼容版本待核实。",
+        "missing_facts": "未确认根因要写可能性；不编两个冲突包或可用版本。"
+      }
+    },
+    {
+      "key": "cd-09",
+      "id": "CD-09",
+      "category": "CD",
+      "name": "技术方案设计",
+      "level": "L3",
+      "use": "系统架构、模块边界、服务依赖、部署拓扑、技术方案取舍。",
+      "materials": {
+        "required": [
+          "业务场景与现有架构",
+          "请求量、数据量及硬指标",
+          "团队、预算和上线约束"
+        ],
+        "optional": [
+          "监控资料",
+          "组件官方能力与价格"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "方案依赖组件现行能力、限制、价格或合规要求且未给可核实材料时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺量级与目标时仅给架构决策问题表，不画脱离业务的定案。",
+        "offline": "可设计机制与模块边界；未核实组件能力不作满足指标保证。",
+        "missing_facts": "容量和成本写条件估算；缺一致性目标不擅自选择有损方案。"
+      }
+    },
+    {
+      "key": "cd-10",
+      "id": "CD-10",
+      "category": "CD",
+      "name": "性能优化",
+      "level": "L3",
+      "use": "接口慢、内存涨、CPU 高、页面卡。",
+      "materials": {
+        "required": [
+          "具体性能现象与量级",
+          "热点代码",
+          "监控或剖析数据",
+          "部署运行环境"
+        ],
+        "optional": [
+          "版本变更",
+          "历史性能基线"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "无测量数据时只给采样和复现方案，不进行确定瓶颈归因。",
+        "offline": "依据本地火焰图、日志和代码排序候选优化，不需外部排行榜。",
+        "missing_facts": "收益范围须有测量依据；未知热点标假设，未跑压测不宣称提升。"
+      }
+    },
+    {
+      "key": "cd-11",
+      "id": "CD-11",
+      "category": "CD",
+      "name": "陌生技术栈上手",
+      "level": "L2",
+      "use": "第一次用某个框架、从一种语言迁到另一种。",
+      "materials": {
+        "required": [
+          "熟悉的技术栈与程度",
+          "目标技术栈和版本",
+          "本次具体任务"
+        ],
+        "optional": [
+          "可投入时间",
+          "已有官方版本文档"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需核对目标版本真实API、废弃项或官方章节链接且用户未提供版本资料时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺目标栈或任务时先给概念映射填写表，不生成任意CRUD项目。",
+        "offline": "可根据已有版本文档写示例；无版本依据的API与章节列待核实。",
+        "missing_facts": "不猜新栈语法或兼容范围；未执行示例不称已跑通。"
+      }
+    },
+    {
+      "key": "cd-12",
+      "id": "CD-12",
+      "category": "CD",
+      "name": "代码讲解",
+      "level": "L2",
+      "use": "接手别人的代码、看懂开源实现。",
+      "materials": {
+        "required": [
+          "待讲解代码",
+          "文件位置与职责"
+        ],
+        "optional": [
+          "读者技术背景",
+          "调用方与被调用模块"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "无代码时只给阅读路线方法，不解释不存在的函数。",
+        "offline": "直接分析已给代码的数据流，缺模块列需继续阅读的位置。",
+        "missing_facts": "未知调用来源和设计动机标推断，不编作者意图。"
+      }
+    },
+    {
+      "key": "cd-13",
+      "id": "CD-13",
+      "category": "CD",
+      "name": "代码逻辑自检 / 自我体检",
+      "level": "L3",
+      "use": "写完一段关键逻辑后自己查一遍、上线前对核心模块做正确性体检。只查逻辑对不对，不查风格和命名（那些交给 CD-03）。",
+      "materials": {
+        "required": [
+          "待检查代码与职责",
+          "业务规则及输入输出不变量"
+        ],
+        "optional": [
+          "并发重试场景",
+          "依赖失败约定",
+          "运行证据"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺代码时给契约采集表；缺关键契约时仍查可证明边界问题，其他标需确认。",
+        "offline": "可静态推导反例与最小修法，未执行用例明确说明。",
+        "missing_facts": "无法证实的调用环境归潜在风险，不为固定数量编确定Bug。"
+      }
+    },
+    {
+      "key": "cd-14",
+      "id": "CD-14",
+      "category": "CD",
+      "name": "数据库表结构设计",
+      "level": "L3",
+      "use": "从业务需求出发，设计数据库表结构、字段、索引和关系。",
+      "materials": {
+        "required": [
+          "业务需求与数据实体说明"
+        ],
+        "optional": [
+          "现有表结构",
+          "预估数据量与读写比例",
+          "数据库类型与版本"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需按特定数据库版本语法或最佳实践设计且材料不足时检索官方文档。"
+      },
+      "fallback": {
+        "missing_materials": "缺业务实体时给需求梳理清单，不凭空建表。",
+        "offline": "基于需求设计表结构，不声称已核对特定数据库版本特性。",
+        "missing_facts": "缺数据量或读写比例不做索引与分表判断；不猜业务字段含义。"
+      }
+    },
+    {
+      "key": "cd-15",
+      "id": "CD-15",
+      "category": "CD",
+      "name": "代码安全审查",
+      "level": "L3",
+      "use": "上线前或接手代码时查安全漏洞：注入、越权、敏感信息泄漏、依赖漏洞。",
+      "materials": {
+        "required": [
+          "待审查的代码"
+        ],
+        "optional": [
+          "接口权限模型",
+          "依赖清单",
+          "部署环境说明"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需核对依赖库已知漏洞（CVE）而材料不足时检索权威漏洞库。"
+      },
+      "fallback": {
+        "missing_materials": "无代码时给安全检查清单，不报具体漏洞。",
+        "offline": "基于代码做静态审查，环境相关风险标需确认。",
+        "missing_facts": "未知权限模型不判越权；不声称已扫描无漏洞。"
+      }
+    },
+    {
+      "key": "pd-01",
+      "id": "PD-01",
+      "category": "PD",
+      "name": "想法到 PRD",
+      "level": "L3",
+      "use": "有个想法要落地，需要一份能给研发看的需求文档。",
+      "materials": {
+        "required": [
+          "产品想法、目标用户与实际使用场景",
+          "现有替代方案",
+          "人力时间预算"
+        ],
+        "optional": [
+          "触发原因",
+          "访谈或市场证据"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺用户或问题时给PRD骨架和验证问题，不把猜测写成已验证需求。",
+        "offline": "以用户材料设计PRD，市场规模无来源不补数字。",
+        "missing_facts": "资源和需求强度未知处列待验证假设，不造用户访谈。"
+      }
+    },
+    {
+      "key": "pd-02",
+      "id": "PD-02",
+      "category": "PD",
+      "name": "MVP 裁剪",
+      "level": "L2",
+      "use": "功能太多做不完，要砍。",
+      "materials": {
+        "required": [
+          "完整功能清单",
+          "目标用户",
+          "可用人力与时间",
+          "上线目的及成功标准"
+        ],
+        "optional": [
+          "功能粗估工作量",
+          "真实用户路径"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺功能清单时给裁剪原则和信息表，不编现有需求优先级。",
+        "offline": "基于已有目标和资源分组，缺实测工作量用明确估算。",
+        "missing_facts": "未知需求频率和转化不能当事实；工作量说明估算依据。"
+      }
+    },
+    {
+      "key": "pd-03",
+      "id": "PD-03",
+      "category": "PD",
+      "name": "竞品分析",
+      "level": "L2",
+      "use": "看对手在做什么、找差异化空间。",
+      "materials": {
+        "required": [
+          "本品定位、竞品对象与分析目的",
+          "竞品官网、定价、评价或截图等资料"
+        ],
+        "optional": [
+          "融资信息",
+          "试用记录",
+          "来源日期"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需获取或更新竞品价格、功能、评价等事实而用户未给足够可核实材料时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺产品定位或对象时给比较维度；缺竞品资料时列采集项，不造功能差异。",
+        "offline": "仅比较已提供的竞品快照，注明日期和缺失维度。",
+        "missing_facts": "无来源的收入、用户评价和定价不估填，差异机会写待验证。"
+      }
+    },
+    {
+      "key": "pd-04",
+      "id": "PD-04",
+      "category": "PD",
+      "name": "技术选型",
+      "level": "L2",
+      "use": "选语言、框架、数据库、云服务、第三方 SaaS。",
+      "materials": {
+        "required": [
+          "选型对象、业务负载和数据特征",
+          "团队能力",
+          "硬性要求与预算时间约束"
+        ],
+        "optional": [
+          "基础设施",
+          "使用年限",
+          "候选官方能力资料"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需核对候选技术现行能力、维护状态、许可或价格且未提供可靠材料时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺负载与硬指标时给选型问题表，不硬排候选优劣。",
+        "offline": "可比较已有证据的候选，未知许可或版本能力列核查项。",
+        "missing_facts": "性能不凭名气打分；成本和能力缺口需通过验证计划补证。"
+      }
+    },
+    {
+      "key": "pd-05",
+      "id": "PD-05",
+      "category": "PD",
+      "name": "产品流程与页面结构",
+      "level": "L2",
+      "use": "设计主流程、定页面层级、给研发和设计交底。",
+      "materials": {
+        "required": [
+          "产品定位与核心用户任务",
+          "现有流程或拟解决的步骤",
+          "角色及终端等约束"
+        ],
+        "optional": [
+          "已有页面",
+          "审核规则",
+          "用户反馈"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺任务或角色时只给流程采集表，不凭空设计权限状态机。",
+        "offline": "依据给定任务生成流程、状态与页面结构。",
+        "missing_facts": "未知业务审批和权限保留待确认，不替用户设定事实规则。"
+      }
+    },
+    {
+      "key": "pd-06",
+      "id": "PD-06",
+      "category": "PD",
+      "name": "排期与里程碑",
+      "level": "L2",
+      "use": "估工期、定节奏、算人力。",
+      "materials": {
+        "required": [
+          "任务清单",
+          "团队角色和可用工时",
+          "截止日期与外部依赖"
+        ],
+        "optional": [
+          "复杂度估计",
+          "历史交付数据"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺任务或产能时给估算表，不承诺可按期完成。",
+        "offline": "可基于现有信息排依赖与里程碑。",
+        "missing_facts": "未确认交付日期和资源标假设，外部依赖不默认为准时。"
+      }
+    },
+    {
+      "key": "pd-07",
+      "id": "PD-07",
+      "category": "PD",
+      "name": "需求评审挑刺",
+      "level": "L2",
+      "use": "评审前自查，或替别人挑方案漏洞。",
+      "materials": {
+        "required": [
+          "待评审需求文档或方案"
+        ],
+        "optional": [
+          "业务目标",
+          "验收标准",
+          "系统约束"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "无文档时给评审问题清单，不说发现具体遗漏。",
+        "offline": "基于原文列问题与会后确认项。",
+        "missing_facts": "缺业务答案时建议仅作方向，不能替文档补既定需求。"
+      }
+    },
+    {
+      "key": "pd-08",
+      "id": "PD-08",
+      "category": "PD",
+      "name": "用户痛点挖掘",
+      "level": "L2",
+      "use": "找真实需求、设计访谈提纲、判断需求真假。",
+      "materials": {
+        "required": [
+          "产品方向、目标用户及研究问题",
+          "已有观察或明确尚无观察"
+        ],
+        "optional": [
+          "访谈、行为数据和销售反馈",
+          "用户触达渠道"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺方向时先给研究目标澄清表；无观察可做访谈提纲，不判断真痛。",
+        "offline": "可设计访谈与证据表，不需检索代替真实用户研究。",
+        "missing_facts": "频率、强度和满意度无证据写待验证，不能编痛点结论。"
+      }
+    },
+    {
+      "key": "pd-09",
+      "id": "PD-09",
+      "category": "PD",
+      "name": "商业计划书",
+      "level": "L3",
+      "use": "BP、融资材料、内部立项、商业模式梳理。",
+      "materials": {
+        "required": [
+          "项目定位和阶段",
+          "已有经营数据或明确无数据",
+          "团队及融资立项诉求"
+        ],
+        "optional": [
+          "市场与竞争证据",
+          "财务假设"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需加入现行市场规模、竞品或政策信息而用户未给可核实来源时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺项目与诉求时给商业计划书结构；无经营数据只写验证计划。",
+        "offline": "可据已给事实与明示假设写草稿，外部市场结论待补来源。",
+        "missing_facts": "实测数据和预测分开；不编收入、团队履历或融资承诺。"
+      }
+    },
+    {
+      "key": "pd-10",
+      "id": "PD-10",
+      "category": "PD",
+      "name": "全栈项目脚手架",
+      "level": "L3",
+      "use": "从零起一个完整项目，要能跑起来。",
+      "materials": {
+        "required": [
+          "项目描述和核心功能",
+          "使用规模",
+          "技术栈或需推荐的说明",
+          "交付要求与熟练度"
+        ],
+        "optional": [
+          "现有仓库",
+          "部署账号环境",
+          "验收场景"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需推荐或核实框架、依赖和部署平台现行版本用法且资料不足时检索官方文档。"
+      },
+      "fallback": {
+        "missing_materials": "缺核心功能时给范围与接口问题表，不生成任意全栈项目。",
+        "offline": "可依已有版本资料提供代码，缺外部依赖资料标启动前核查。",
+        "missing_facts": "未执行启动与部署不称跑通；未知账户权限不写成已配置。"
+      }
+    },
+    {
+      "key": "pd-11",
+      "id": "PD-11",
+      "category": "PD",
+      "name": "数据埋点与指标设计",
+      "level": "L2",
+      "use": "给产品功能设计数据埋点事件和指标，回答怎么知道这个功能做得好不好。",
+      "materials": {
+        "required": [
+          "要衡量的功能或流程与业务目标"
+        ],
+        "optional": [
+          "现有埋点规范",
+          "分析平台"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺功能说明时给埋点梳理表；缺业务目标不设指标。",
+        "offline": "基于功能与目标设计埋点，不需要联网。",
+        "missing_facts": "不猜已有埋点字段；指标口径不明确时先定义口径。"
+      }
+    },
+    {
+      "key": "an-01",
+      "id": "AN-01",
+      "category": "AN",
+      "name": "数据表解读",
+      "level": "L2",
+      "use": "手上一张表看不出结论、想找异常和趋势。",
+      "materials": {
+        "required": [
+          "数据表或字段定义与实际量级",
+          "来源、时间和覆盖范围",
+          "分析问题"
+        ],
+        "optional": [
+          "业务机制",
+          "季节性因素"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "只有字段而无观测值时给分析方案，不生成分布或趋势数字。",
+        "offline": "直接分析已给数据并标统计口径。",
+        "missing_facts": "不把相关性当因果；缺分母或历史数据时暂停依赖结论。"
+      }
+    },
+    {
+      "key": "an-02",
+      "id": "AN-02",
+      "category": "AN",
+      "name": "行业研究",
+      "level": "L3",
+      "use": "进入新行业、写赛道分析、做投资或立项判断。",
+      "materials": {
+        "required": [
+          "行业边界、研究目的、地域和时间范围",
+          "用户资源与能力"
+        ],
+        "optional": [
+          "可核实行业数据和政策",
+          "竞争资料"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "市场规模、竞争格局、政策或当期变化缺可核实资料时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺行业范围时先界定问题；无数据时给产业链和双路径测算框架。",
+        "offline": "利用已有资料写有来源部分，市场规模与现行格局不足则待核实。",
+        "missing_facts": "所有估算列公式和假设，不虚构企业营收、增长率或政策。"
+      }
+    },
+    {
+      "key": "an-03",
+      "id": "AN-03",
+      "category": "AN",
+      "name": "多方案权衡",
+      "level": "L2",
+      "use": "几个选项选一个、要不要做某件事。",
+      "materials": {
+        "required": [
+          "决策事项与各选项",
+          "资源及不可逆约束",
+          "偏好排序"
+        ],
+        "optional": [
+          "截止时间",
+          "各选项证据",
+          "可调整权重"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺选项时给选择空间梳理；缺偏好不强给唯一赢家。",
+        "offline": "根据已给选择事实做权衡和敏感性分析。",
+        "missing_facts": "权重与分数标主观假设，未知选项属性不填确定值。"
+      }
+    },
+    {
+      "key": "an-04",
+      "id": "AN-04",
+      "category": "AN",
+      "name": "单位经济测算",
+      "level": "L2",
+      "use": "算 LTV/CAC、回本周期、毛利、单量盈亏平衡。",
+      "materials": {
+        "required": [
+          "业务模式和收入成本口径",
+          "实际已知收入、订单、客户或成本数据",
+          "待判断问题"
+        ],
+        "optional": [
+          "获客支出",
+          "留存",
+          "费用明细"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺数值时给单位经济输入表和公式，不报利润或回本期。",
+        "offline": "依现有数据计算可支持指标，不需查行业平均替代。",
+        "missing_facts": "缺成本不得写盈利；毛利已扣项不重复扣，缺留存不算确定LTV。"
+      }
+    },
+    {
+      "key": "an-05",
+      "id": "AN-05",
+      "category": "AN",
+      "name": "事前验尸",
+      "level": "L2",
+      "use": "项目上马前、重要决策前，找失败原因。",
+      "materials": {
+        "required": [
+          "拟执行事项、投入与时间",
+          "成功标准和参与方"
+        ],
+        "optional": [
+          "个人担心",
+          "已有风险记录"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺事项时给事前验尸提问表，不虚构项目失败原因。",
+        "offline": "可基于项目条件做假设推演和退出设计。",
+        "missing_facts": "所有失败场景标为推演，概率无依据不报统计值。"
+      }
+    },
+    {
+      "key": "an-06",
+      "id": "AN-06",
+      "category": "AN",
+      "name": "汇报解读",
+      "level": "L1",
+      "use": "老板的话听不懂、材料看不出重点、会议结论不明确。",
+      "materials": {
+        "required": [
+          "待解读原话或汇报材料",
+          "说话人关系和具体场合"
+        ],
+        "optional": [
+          "对方风格",
+          "用户当前理解与疑惑"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺原话时给理解检查问题，不能代猜领导意图。",
+        "offline": "可对所给文本列多种解释及验证方式。",
+        "missing_facts": "隐含意图只列可能，未说出的要求不当确定指令。"
+      }
+    },
+    {
+      "key": "an-07",
+      "id": "AN-07",
+      "category": "AN",
+      "name": "问卷设计",
+      "level": "L2",
+      "use": "做用户调研、员工满意度、活动反馈。",
+      "materials": {
+        "required": [
+          "问卷所服务的决策",
+          "调研对象、触达方式及样本条件"
+        ],
+        "optional": [
+          "已有信息",
+          "答题时长限制"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺研究目标时给调研问题澄清表，不直接编一套泛问卷。",
+        "offline": "可设计问卷、偏差提示与分析预案。",
+        "missing_facts": "样本代表性和可推广范围不凭样本量保证，未知人群行为不代填。"
+      }
+    },
+    {
+      "key": "an-08",
+      "id": "AN-08",
+      "category": "AN",
+      "name": "根因分析",
+      "level": "L2",
+      "use": "事故复盘、问题反复出现、指标异常。",
+      "materials": {
+        "required": [
+          "事件现象、发生时间和影响",
+          "发现与处理记录",
+          "已知触发因素"
+        ],
+        "optional": [
+          "监控、访谈和工单",
+          "损失记录"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺事件记录时给复盘时间线表；无证据不连写五层确定原因。",
+        "offline": "基于已有记录区分事实、推断和待验证原因。",
+        "missing_facts": "不能把解释猜想变根因；未知时间和损失留缺项。"
+      }
+    },
+    {
+      "key": "an-09",
+      "id": "AN-09",
+      "category": "AN",
+      "name": "财报速读",
+      "level": "L3",
+      "use": "看一家公司的三张表，判断经营质地。",
+      "materials": {
+        "required": [
+          "财报原文或数据及期间，或明确公司与待分析期间",
+          "分析关注点"
+        ],
+        "optional": [
+          "行业特点",
+          "可核实同行基准",
+          "多期报告"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "仅给公司与期间时需获取原始财报；需现行同行基准而无可核实资料时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺报告与明确检索对象时给三表数据清单，不生成财务判断。",
+        "offline": "依据已给财报计算；无行业来源不列基准，缺表暂停相关质量分析。",
+        "missing_facts": "缺分母、附注或可比期间不补数据；单季不推长期，不给买卖建议。"
+      }
+    },
+    {
+      "key": "lc-01",
+      "id": "LC-01",
+      "category": "LC",
+      "name": "概念讲解",
+      "level": "L1",
+      "use": "学不懂一个概念，要真正理解而不是背定义。",
+      "materials": {
+        "required": [
+          "待讲解概念"
+        ],
+        "optional": [
+          "易混概念",
+          "课程上下文",
+          "学习目的与已有基础"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺概念名称时先确定对象；基础未知可用入门难度并明示默认。",
+        "offline": "可解释稳定概念并给自编例子，不冒充最新研究综述。",
+        "missing_facts": "术语有多义时分义说明，不把不明领域定义强行合并。"
+      }
+    },
+    {
+      "key": "lc-02",
+      "id": "LC-02",
+      "category": "LC",
+      "name": "学习路径",
+      "level": "L2",
+      "use": "从零学一门技术、转行、系统补基础。",
+      "materials": {
+        "required": [
+          "目标技能与具体能力目标",
+          "现有基础",
+          "每周及总可投入时间"
+        ],
+        "optional": [
+          "学习偏好",
+          "历史卡点",
+          "现有教材"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "推荐具体课程、文档或工具时需核实当前可用性、版本或价格，缺有效来源时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺目标或时间时给能力拆解问题表，不排具体周计划。",
+        "offline": "可给阶段目标与练习；未核实资源只列选择标准和待查条目。",
+        "missing_facts": "不保证学习周期和就业效果；未知基础不按零基础或高手直接定案。"
+      }
+    },
+    {
+      "key": "lc-03",
+      "id": "LC-03",
+      "category": "LC",
+      "name": "书/课精读",
+      "level": "L2",
+      "use": "读完记不住、要做读书笔记、要把一本书变成能力。",
+      "materials": {
+        "required": [
+          "书籍目录、章节内容或课程大纲",
+          "精读目的"
+        ],
+        "optional": [
+          "用户已有知识",
+          "关键章节全文"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "只有目录时做阅读路线，不假装读过章节论证。",
+        "offline": "直接处理提供的章节，不以网络书评替代原文。",
+        "missing_facts": "作者未在材料中表达的观点不代写，全文缺失明确阅读范围。"
+      }
+    },
+    {
+      "key": "lc-04",
+      "id": "LC-04",
+      "category": "LC",
+      "name": "简历改写",
+      "level": "L2",
+      "use": "投递没回音、经历不会写、要从\"职责\"改成\"成果\"。",
+      "materials": {
+        "required": [
+          "现有简历或真实工作经历",
+          "目标岗位或职位要求"
+        ],
+        "optional": [
+          "JD",
+          "个人优势短板",
+          "投递渠道"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺经历时给履历采集表，不编STAR案例。",
+        "offline": "根据现有经历与岗位要求改写，无需查询个人履历。",
+        "missing_facts": "业绩数字未给不补；职责、参与和主导严格依真实材料。"
+      }
+    },
+    {
+      "key": "lc-05",
+      "id": "LC-05",
+      "category": "LC",
+      "name": "面试准备",
+      "level": "L3",
+      "use": "面试前一周，准备项目讲解和可能被问的问题。",
+      "materials": {
+        "required": [
+          "目标岗位或职位说明",
+          "个人简历要点"
+        ],
+        "optional": [
+          "JD",
+          "项目细节",
+          "公司官方资料",
+          "面试轮次",
+          "已知薄弱环节"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "准备需涉及公司现状、产品或当期岗位信息而用户未给可核实资料时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺背景时可给岗位问题分类，不代编自我介绍和项目经历。",
+        "offline": "依现有简历和JD准备，未知公司事实列研究清单。",
+        "missing_facts": "回答证据不足标待补，不编个人经历、团队规模和贡献。"
+      }
+    },
+    {
+      "key": "lc-06",
+      "id": "LC-06",
+      "category": "LC",
+      "name": "周报月报",
+      "level": "L1",
+      "use": "每周憋周报，或想把流水账写成有价值的内容。",
+      "materials": {
+        "required": [
+          "实际工作事项与本期结果",
+          "岗位和汇报对象"
+        ],
+        "optional": [
+          "风险延期",
+          "下期计划",
+          "可核实指标"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺工作记录时给流水账收集表，不生成完成事项。",
+        "offline": "直接把已给记录组织为汇报。",
+        "missing_facts": "完成状态、数据和下周承诺不猜，未定事项列待确认。"
+      }
+    },
+    {
+      "key": "lc-07",
+      "id": "LC-07",
+      "category": "LC",
+      "name": "述职汇报",
+      "level": "L3",
+      "use": "年终总结、晋升答辩、转正汇报。",
+      "materials": {
+        "required": [
+          "述职场合、时长与目标职级",
+          "实际工作与结果",
+          "不足"
+        ],
+        "optional": [
+          "职级标准",
+          "个人价值判断",
+          "证明材料"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺经历时给述职结构，不编晋升案例或年度业绩。",
+        "offline": "按已给事实整理主线与PPT页序。",
+        "missing_facts": "缺结果证据不报提升百分比，能力对应写依据而非自封评级。"
+      }
+    },
+    {
+      "key": "lc-08",
+      "id": "LC-08",
+      "category": "LC",
+      "name": "职业路径决策",
+      "level": "L2",
+      "use": "要不要跳槽、转行、读研、接某个 offer。",
+      "materials": {
+        "required": [
+          "当前职业与能力情况",
+          "真实可选路径",
+          "偏好排序与家庭地域等约束"
+        ],
+        "optional": [
+          "收入",
+          "时间窗口",
+          "具体岗位或录用条件"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "比较依赖当期岗位、薪酬、公司或签证政策事实而未给可靠资料时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺选项时梳理可行路径；缺偏好不强推跳槽或留任。",
+        "offline": "基于已知录用条件和个人约束权衡，市场趋势未知列待查。",
+        "missing_facts": "不猜涨薪幅度或录用机会；未知政策与家庭事实保留缺口。"
+      }
+    },
+    {
+      "key": "lc-09",
+      "id": "LC-09",
+      "category": "LC",
+      "name": "向上沟通",
+      "level": "L2",
+      "use": "要资源、谈加薪、汇报坏消息、争取机会。",
+      "materials": {
+        "required": [
+          "沟通对象与场合",
+          "具体目标",
+          "真实筹码和底线"
+        ],
+        "optional": [
+          "对方关注点",
+          "已有交流",
+          "可能顾虑"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺目标时给沟通准备表，不编调薪或资源诉求。",
+        "offline": "根据已有事实设计开场、理由和回应。",
+        "missing_facts": "对方顾虑标推测，不虚构业绩或承诺换取同意。"
+      }
+    },
+    {
+      "key": "lc-10",
+      "id": "LC-10",
+      "category": "LC",
+      "name": "考试突击",
+      "level": "L2",
+      "use": "时间不够，要抓重点过线。",
+      "materials": {
+        "required": [
+          "考试名称和日期",
+          "科目范围",
+          "现有掌握情况",
+          "分数目标与每天时间"
+        ],
+        "optional": [
+          "官方考纲",
+          "题型分布",
+          "历年题及分值"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需要核实现行考纲、题型或分值，而用户未提供当年有效资料时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺考试范围时先给冲刺输入表，不编高频考点和分值地图。",
+        "offline": "按已有考纲与真题做计划，未知当年变化列待核实。",
+        "missing_facts": "无题频数据不说必考；掌握情况未知需自测，不保证达到分数。"
+      }
+    },
+    {
+      "key": "lc-11",
+      "id": "LC-11",
+      "category": "LC",
+      "name": "谈 offer 与薪资谈判",
+      "level": "L2",
+      "use": "拿到 offer 要谈薪资待遇，或想争取加薪。",
+      "materials": {
+        "required": [
+          "offer 条件或当前薪资结构"
+        ],
+        "optional": [
+          "市场行情",
+          "个人期望与底线",
+          "对方情况"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需同岗位市场薪酬数据而用户未提供时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺 offer 条件时给谈判准备清单；缺市场行情不给具体数字建议。",
+        "offline": "基于已知条件给谈判策略，行情未知标待查。",
+        "missing_facts": "不猜对方预算；不给脱离行情的确定数字。"
+      }
+    },
+    {
+      "key": "cl-01",
+      "id": "CL-01",
+      "category": "CL",
+      "name": "头脑风暴",
+      "level": "L2",
+      "use": "想不出新点子、方案太常规、需要跳出惯性。",
+      "materials": {
+        "required": [
+          "要解决的问题",
+          "目标与硬约束"
+        ],
+        "optional": [
+          "已有想法及不足",
+          "评审标准"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺问题时给重述问题的方法，不能替用户决定创意主题。",
+        "offline": "可基于约束生成新想法并明确为方案。",
+        "missing_facts": "实施成本与效果缺证据标假设，不把创意写成真实案例。"
+      }
+    },
+    {
+      "key": "cl-02",
+      "id": "CL-02",
+      "category": "CL",
+      "name": "故事设定",
+      "level": "L3",
+      "use": "写小说、剧本、游戏世界观。",
+      "materials": {
+        "required": [
+          "故事类型、篇幅与已有灵感或创作方向"
+        ],
+        "optional": [
+          "读者期待",
+          "人物场景",
+          "排除情节"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺创作方向时给设定选择框架；可明示默认体裁后提出虚构方案。",
+        "offline": "可完成虚构世界与结构设计，不依赖外部实时资料。",
+        "missing_facts": "虚构内容明确在故事内；涉及真实背景而未核实者留考据项。"
+      }
+    },
+    {
+      "key": "cl-03",
+      "id": "CL-03",
+      "category": "CL",
+      "name": "取名",
+      "level": "L1",
+      "use": "给孩子、宠物、作品、项目代号取名。",
+      "materials": {
+        "required": [
+          "取名对象及希望表达的感觉"
+        ],
+        "optional": [
+          "姓氏或已有部分",
+          "字数语言",
+          "禁忌"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺对象时先给取名偏好表，不混用人名与店名标准。",
+        "offline": "可给创意候选，典故无把握则用直观寓意。",
+        "missing_facts": "不编古籍出处；商标、重名与法律可用性不作已核查保证。"
+      }
+    },
+    {
+      "key": "cl-04",
+      "id": "CL-04",
+      "category": "CL",
+      "name": "旅行行程",
+      "level": "L2",
+      "use": "出行规划、带老人小孩、假期有限。",
+      "materials": {
+        "required": [
+          "目的地、出行日期和天数",
+          "同行人体力",
+          "预算与偏好"
+        ],
+        "optional": [
+          "住宿位置",
+          "已订交通",
+          "有效景点与交通信息"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "核实开放时间、票价、交通、预约或天气等时效事实且用户未给当前可靠资料时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺日期目的地时给行程需求表；缺体力信息不定高强度路线。",
+        "offline": "可给区域顺序与时间预算草案；营业、票务和天气列出发前核查项。",
+        "missing_facts": "不编实时余票和预约成功；缺准确车次不写确定衔接。"
+      }
+    },
+    {
+      "key": "cl-05",
+      "id": "CL-05",
+      "category": "CL",
+      "name": "健身与饮食计划",
+      "level": "L2",
+      "use": "减脂、增肌、改善体能。",
+      "materials": {
+        "required": [
+          "年龄、身高体重等现状与伤病说明",
+          "训练目标、周期和条件",
+          "饮食现状"
+        ],
+        "optional": [
+          "体脂",
+          "作息",
+          "医生已有建议"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需给具体健康或营养量化建议且没有适用可靠依据，或涉及伤病禁忌时核查权威资料。"
+      },
+      "fallback": {
+        "missing_materials": "缺健康和训练条件时只给信息采集与一般活动原则，不给个人强度或热量处方。",
+        "offline": "可整理已给约束与医嘱；无可靠健康依据的具体强度和热量不定值。",
+        "missing_facts": "个人伤病、用药及体能不能网上补全；不保证减重速度，风险项需确认。"
+      }
+    },
+    {
+      "key": "cl-06",
+      "id": "CL-06",
+      "category": "CL",
+      "name": "大件购买决策",
+      "level": "L2",
+      "use": "买车、买电脑、装修、买家电。",
+      "materials": {
+        "required": [
+          "购买品类、预算与主要用途",
+          "使用年限和偏好"
+        ],
+        "optional": [
+          "已看型号与纠结点",
+          "近期价格和规格来源"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "比较现售型号、价格、售后或购买时机且未给当前可核实资料时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺用途预算时给需求指标表，不列定向型号推荐。",
+        "offline": "可以比较用户给的有日期报价和参数；其他型号仅列筛选条件。",
+        "missing_facts": "不编价格、缺货和可靠性数据；关键参数未知就暂停排名。"
+      }
+    },
+    {
+      "key": "cl-07",
+      "id": "CL-07",
+      "category": "CL",
+      "name": "送礼",
+      "level": "L1",
+      "use": "不知道送什么、预算有限、关系微妙。",
+      "materials": {
+        "required": [
+          "送礼对象关系、场合与预算"
+        ],
+        "optional": [
+          "用户顾虑",
+          "已考虑礼物",
+          "已知喜好与禁忌"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需要推荐具体在售商品并比较现价或购买渠道而用户未给有效资料时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺关系或预算时给礼物方向分类，避免具体金额和私人物品断言。",
+        "offline": "可按已知喜好推荐礼物类别与表达方式，不报未经核实商品价格。",
+        "missing_facts": "不按性别年龄猜爱好；未知过敏、尺码与禁忌列待确认。"
+      }
+    },
+    {
+      "key": "cl-08",
+      "id": "CL-08",
+      "category": "CL",
+      "name": "情绪梳理",
+      "level": "L2",
+      "use": "想不清楚、内耗、纠结、说不清自己怎么了。",
+      "materials": {
+        "required": [
+          "用户对当前事件、感受或困扰的自由描述"
+        ],
+        "optional": [
+          "希望得到的帮助方式",
+          "相关背景"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺具体描述时以温和邀请开始，不替用户编事件或情绪。",
+        "offline": "可围绕用户表达帮助区分事实、想法和可行小行动。",
+        "missing_facts": "不猜他人动机、不诊断心理疾病；未知背景保留开放性。"
+      }
+    },
+    {
+      "key": "cl-09",
+      "id": "CL-09",
+      "category": "CL",
+      "name": "菜谱与一周菜单规划",
+      "level": "L1",
+      "use": "不知道吃什么、要规划一周菜单、家里有食材想消耗掉。",
+      "materials": {
+        "required": [
+          "用餐人数与忌口过敏"
+        ],
+        "optional": [
+          "已有食材",
+          "预算",
+          "每天做饭时间",
+          "厨具"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺人数或忌口时只给通用搭配原则，不出具体菜单。",
+        "offline": "基于食材和忌口规划，不需要联网。",
+        "missing_facts": "不假定营养需求；过敏忌口必须明示。"
+      }
+    },
+    {
+      "key": "mt-01",
+      "id": "MT-01",
+      "category": "MT",
+      "name": "需求转提示词",
+      "level": "L2",
+      "use": "只知道自己要什么，不知道怎么描述。",
+      "materials": {
+        "required": [
+          "用户希望AI完成的实际需求",
+          "预期产出与用途"
+        ],
+        "optional": [
+          "已有材料",
+          "尝试过的提示词及不满意处"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺方向时问至多两个必要问题；无回答则给含待填事实的提示词框架。",
+        "offline": "可直接把用户需求结构化为提示词，不执行提示词内需要联网的下游任务。",
+        "missing_facts": "风格可明示默认，事实字段留待填；不把假定背景写成用户资料。"
+      }
+    },
+    {
+      "key": "mt-02",
+      "id": "MT-02",
+      "category": "MT",
+      "name": "诊断现有提示词",
+      "level": "L2",
+      "use": "有提示词但效果差，想知道问题在哪。",
+      "materials": {
+        "required": [
+          "完整待诊断提示词",
+          "预期效果与实际不满意表现"
+        ],
+        "optional": [
+          "真实输出示例",
+          "不满意项优先级"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺提示词时给提交清单；缺真实效果可查文本问题，不能证明哪句导致失败。",
+        "offline": "可进行逐句诊断与最小改写，不需运行外部任务。",
+        "missing_facts": "无法归因的表现标待测试，不把修订预期当已验证提升。"
+      }
+    },
+    {
+      "key": "mt-03",
+      "id": "MT-03",
+      "category": "MT",
+      "name": "提示词打分",
+      "level": "L2",
+      "use": "比较几个版本，或想知道还差在哪。",
+      "materials": {
+        "required": [
+          "至少一个待评提示词",
+          "使用场景"
+        ],
+        "optional": [
+          "第二版本",
+          "真实任务测试结果"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺文本时给评分表；缺场景时只评价可观察结构，场景适配性待定。",
+        "offline": "按统一标准评分并给原句证据，明确文本评估范围。",
+        "missing_facts": "不为凑三条编扣分项；未做实际对比不能声称效果更好。"
+      }
+    },
+    {
+      "key": "mt-04",
+      "id": "MT-04",
+      "category": "MT",
+      "name": "从对话反推提示词",
+      "level": "L2",
+      "use": "某次 AI 回答特别好，想复现那个效果。",
+      "materials": {
+        "required": [
+          "包含用户提问与AI回答的对话记录"
+        ],
+        "optional": [
+          "喜欢的具体特征",
+          "复用目的"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺对话时给回收材料清单，不能还原未知隐含约束。",
+        "offline": "可从已有对话提取显式与隐含要求。",
+        "missing_facts": "单次表现不保证复现；无法对应对话特征的约束不编入事实。"
+      }
+    },
+    {
+      "key": "mt-05",
+      "id": "MT-05",
+      "category": "MT",
+      "name": "压缩提示词",
+      "level": "L2",
+      "use": "提示词太长、占上下文、要放进系统提示。",
+      "materials": {
+        "required": [
+          "待压缩提示词",
+          "目标长度与不可丢的核心约束"
+        ],
+        "optional": [
+          "使用方式",
+          "效果基准"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺原文时给压缩原则，不能交付冒充等价的短版本。",
+        "offline": "可直接删冗合并并检查格式与不确定出口。",
+        "missing_facts": "不能声称未经测试效果完全不变；长度目标与硬约束冲突时说明取舍。"
+      }
+    },
+    {
+      "key": "mt-06",
+      "id": "MT-06",
+      "category": "MT",
+      "name": "长会话锚定",
+      "level": "L1",
+      "use": "对话十几轮后 AI 开始忘记设定。",
+      "materials": {
+        "required": [
+          "需重申的关键约束",
+          "要继续处理的新问题或上下文"
+        ],
+        "optional": [
+          "先前对话摘要"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺约束时只给锚定格式；缺新问题则保留约束不虚构待办。",
+        "offline": "可重申与继续处理已有材料；新问题自身依赖另外判断。",
+        "missing_facts": "不把缺失会话当已记住，不默默补过去的决定。"
+      }
+    },
+    {
+      "key": "mt-07",
+      "id": "MT-07",
+      "category": "MT",
+      "name": "提示词模板化",
+      "level": "L2",
+      "use": "有一段好用的提示词，想反向提炼成带占位符、可复用的模板。",
+      "materials": {
+        "required": [
+          "待模板化的提示词原文"
+        ],
+        "optional": [
+          "希望保留的固定部分",
+          "需要参数化的变量"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺原文时给模板化方法清单（拆结构、提变量、保留边界），不生成具体模板。",
+        "offline": "基于原文提炼模板，不需要联网。",
+        "missing_facts": "不猜变量含义；不把已验证有效的指令抽象成空话。"
+      }
+    },
+    {
+      "key": "mt-08",
+      "id": "MT-08",
+      "category": "MT",
+      "name": "多模型提示词适配",
+      "level": "L2",
+      "use": "同一段提示词要用在不同模型上，或要适配目标模型的特性。",
+      "materials": {
+        "required": [
+          "待适配的提示词",
+          "目标模型"
+        ],
+        "optional": [
+          "当前模型的已知效果",
+          "目标模型的限制"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需核对目标模型的官方提示词规范或能力限制而材料不足时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺提示词时给适配检查清单；缺目标模型不做适配。",
+        "offline": "基于已知模型差异适配，能力未知标待实测。",
+        "missing_facts": "不凭印象判模型能力；不为适配删掉证据与安全边界。"
+      }
+    },
+    {
+      "key": "lg-01",
+      "id": "LG-01",
+      "category": "LG",
+      "name": "合同审查",
+      "level": "L3",
+      "use": "签合同前审条款、审对方草拟的合同、找出对我方不利的条款。",
+      "materials": {
+        "required": [
+          "合同全文",
+          "我方立场与交易背景",
+          "适用法域或其待确认说明"
+        ],
+        "optional": [
+          "金额期限",
+          "重点顾虑",
+          "有效法规和官方来源"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需判断条款效力、强制规定或引用现行法条，而用户未给适用法域下有效官方依据时检索。"
+      },
+      "fallback": {
+        "missing_materials": "无合同时只给合同提交清单，不猜具体条款；法域未知暂停效力判断。",
+        "offline": "可查文本歧义和商业风险；法条与效力不能核实时仅列规则检索方向。",
+        "missing_facts": "不猜法条、主体权限与履约事实；法律风险和商业判断分开。"
+      }
+    },
+    {
+      "key": "lg-02",
+      "id": "LG-02",
+      "category": "LG",
+      "name": "法律问题分析",
+      "level": "L3",
+      "use": "遇到纠纷不知道怎么办、要判断能不能告、胜算多大。",
+      "materials": {
+        "required": [
+          "争议事实的时间线、地点及证据说明",
+          "具体诉求"
+        ],
+        "optional": [
+          "合同聊天等原始证据",
+          "有效规则来源"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "进行现行规则适用、时限或路径判断而未提供适用法域与日期下的可核实官方依据时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺事实或诉求时给事实与证据表，不下权利或胜诉结论。",
+        "offline": "可整理事实争点和证据缺口；未核实规则时不作确定个案判断。",
+        "missing_facts": "金额、关键日期或证据缺失暂停计算，不报胜诉百分比。"
+      }
+    },
+    {
+      "key": "lg-03",
+      "id": "LG-03",
+      "category": "LG",
+      "name": "判决书摘要",
+      "level": "L2",
+      "use": "拿到一份判决书看不懂，要快速抓住要点，或要写案件摘要。",
+      "materials": {
+        "required": [
+          "判决书全文或注明范围的节选"
+        ],
+        "optional": [
+          "对照判例",
+          "摘要重点"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "无判决文本时只给摘要结构；缺判项就写节选未提供，不从说理反推结果。",
+        "offline": "可转述该历史判决的记载与引用依据；不能据此确认现行法或当前裁判趋势，另要求该判断时须核查有效来源。",
+        "missing_facts": "区分主张与认定；金额日期逐字核对，程序状态与判项不补造。"
+      }
+    },
+    {
+      "key": "lg-04",
+      "id": "LG-04",
+      "category": "LG",
+      "name": "劳动纠纷",
+      "level": "L2",
+      "use": "被辞退、拖欠工资、加班费、社保、竞业限制、工伤。",
+      "materials": {
+        "required": [
+          "身份与所在城市",
+          "入职、工资和合同情况",
+          "纠纷时间线、现有证据及诉求"
+        ],
+        "optional": [
+          "工资条考勤聊天",
+          "当地有效规则"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需判断劳动权利、当地标准、程序或时效且未给适用日期下有效官方来源时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺工资或工作年限只给测算变量表；缺事实先梳理纠纷类别，不算确定金额。",
+        "offline": "可整理材料与公式；未核实地区标准和规则不报确定赔偿或截止日。",
+        "missing_facts": "不混同N与2N；未知时效中断、日期或工资基数均列待确认。"
+      }
+    },
+    {
+      "key": "lg-05",
+      "id": "LG-05",
+      "category": "LG",
+      "name": "法律文书起草",
+      "level": "L2",
+      "use": "起诉状、答辩状、律师函、仲裁申请、上诉状。",
+      "materials": {
+        "required": [
+          "文种、程序阶段及接收对象",
+          "实际身份权限、事实、诉求和证据",
+          "答辩的对方请求或上诉的原裁判等文种必要材料"
+        ],
+        "optional": [
+          "相应机构官方模板",
+          "既有文书",
+          "金额依据"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需要确认现行提交格式、程序规则或法律依据且未给有效官方材料时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺文种关键原件时只给匹配框架，不冒充可提交文书。",
+        "offline": "依已有材料写草稿，格式和法律适用列需正式使用前核查。",
+        "missing_facts": "不猜案号机关、期限与证据编号；无授权不伪造律师律所署名。"
+      }
+    },
+    {
+      "key": "lg-06",
+      "id": "LG-06",
+      "category": "LG",
+      "name": "企业合规自查",
+      "level": "L3",
+      "use": "创业公司、个体户、小团队做合规体检，识别经营中的法律风险。",
+      "materials": {
+        "required": [
+          "企业业务、组织形态与地区",
+          "用工及实际经营行为",
+          "已有纠纷或明确未提供"
+        ],
+        "optional": [
+          "合同制度",
+          "许可资质",
+          "有效监管规则"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需依据现行地区行业监管要求判断合规风险且用户未给有效官方来源时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺经营情况时给七模块采集表，不把可能风险认定为企业违法。",
+        "offline": "可整理现有制度缺口；法规未核实仅列检查方向，不给确定违法结论。",
+        "missing_facts": "未知社保、数据流或资质状态不代填，整改优先级需对应已知事实。"
+      }
+    },
+    {
+      "key": "lg-07",
+      "id": "LG-07",
+      "category": "LG",
+      "name": "知识产权与版权商标",
+      "level": "L2",
+      "use": "遇到版权、商标、专利相关问题，或想判断自己的行为是否侵权。",
+      "materials": {
+        "required": [
+          "具体场景与涉及的作品、标识或技术"
+        ],
+        "optional": [
+          "相关合同或授权文件"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需核对现行法律条文或权利登记状态而用户未提供时检索。"
+      },
+      "fallback": {
+        "missing_materials": "缺具体场景时给知识产权保护框架，不做个案判断。",
+        "offline": "基于提供的场景分析，不声称已检索权利状态。",
+        "missing_facts": "不判断商标或专利是否已注册（需官方查询）；法条标请核实现行有效文本。"
+      }
+    },
+    {
+      "key": "en-01",
+      "id": "EN-01",
+      "category": "EN",
+      "name": "考试写作改写",
+      "level": "L2",
+      "use": "雅思/托福/考研英语写作，把自己的作文改到高分档。",
+      "materials": {
+        "required": [
+          "考试题目与作文类型",
+          "用户作文"
+        ],
+        "optional": [
+          "目标字数",
+          "明确的评分规范"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "无作文时可讲写作结构，不能评分或逐句改写；缺题目不判任务回应。",
+        "offline": "依所给题目和标准做练习反馈，不声称官方分数。",
+        "missing_facts": "不替换观点和例子；原作文缺内容只指出缺项，不编个人经历。"
+      }
+    },
+    {
+      "key": "en-02",
+      "id": "EN-02",
+      "category": "EN",
+      "name": "英文精读",
+      "level": "L2",
+      "use": "读外刊、真题阅读、长难句看不懂。",
+      "materials": {
+        "required": [
+          "待精读英文文章或句子"
+        ],
+        "optional": [
+          "用户水平",
+          "精读目的"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "无英文原文时给精读步骤，不虚构原句分析。",
+        "offline": "可拆句、释义和翻译，保留提供的原文。",
+        "missing_facts": "短材料不足三句不凑长难句；原文不清处标语义待确认。"
+      }
+    },
+    {
+      "key": "en-03",
+      "id": "EN-03",
+      "category": "EN",
+      "name": "中英学术互译",
+      "level": "L2",
+      "use": "论文中译英、英译中，要学术、要地道。",
+      "materials": {
+        "required": [
+          "待翻译原文",
+          "中译英或英译中的方向"
+        ],
+        "optional": [
+          "学科",
+          "术语表",
+          "期刊风格"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "无原文时只列提交要求，不生成假译文。",
+        "offline": "可按原文翻译并保留公式和引用，疑难术语保留原词待确认。",
+        "missing_facts": "不增研究事实与结论，歧义列存疑，不把猜测润成确定含义。"
+      }
+    },
+    {
+      "key": "en-04",
+      "id": "EN-04",
+      "category": "EN",
+      "name": "英文商务邮件",
+      "level": "L1",
+      "use": "给国外客户、同事、教授写邮件。",
+      "materials": {
+        "required": [
+          "收件人关系与正式程度",
+          "邮件目的",
+          "实际需传达的要点"
+        ],
+        "optional": [
+          "称呼偏好",
+          "姓名头衔",
+          "已有往来"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺要点时给英文邮件骨架；不替用户编请求条件。",
+        "offline": "直接根据关系和事实写英文邮件。",
+        "missing_facts": "头衔称呼未知采用中性方案；日期承诺未给不代填。"
+      }
+    },
+    {
+      "key": "en-05",
+      "id": "EN-05",
+      "category": "EN",
+      "name": "口语练习",
+      "level": "L2",
+      "use": "练口语、准备面试口语、日常对话。",
+      "materials": {
+        "required": [],
+        "optional": [
+          "英语水平与薄弱点",
+          "目标场景",
+          "希望练习的角色"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "无预先材料可直接以默认日常场景开口；用户尚未回应时不做个人纠错。",
+        "offline": "可自然对话并随表现调整难度。",
+        "missing_facts": "无语音不评价真实发音；未出现的错误不编，进步总结依实际轮次。"
+      }
+    },
+    {
+      "key": "en-06",
+      "id": "EN-06",
+      "category": "EN",
+      "name": "英文去 AI 味",
+      "level": "L2",
+      "use": "英文论文、邮件、essay 被说\"像 AI 写的\"，要去机器味。",
+      "materials": {
+        "required": [
+          "待编辑英文文本"
+        ],
+        "optional": [
+          "文体与读者",
+          "保留术语表"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "无英文文本时给提交说明，不制造改写前后对照。",
+        "offline": "可直接改进表达与句式并保留数据引用。",
+        "missing_facts": "不用词表判定AI生成；不补学术内容，不机械替换准确术语。"
+      }
+    },
+    {
+      "key": "md-01",
+      "id": "MD-01",
+      "category": "MD",
+      "name": "体检/化验单解读",
+      "level": "L2",
+      "use": "拿到化验单、体检报告看不懂，就医前先了解大概。",
+      "materials": {
+        "required": [
+          "报告原文或清晰图像，含可辨认的指标、数值和单位"
+        ],
+        "optional": [
+          "报告日期及自身参考范围",
+          "与解释相关的年龄等条件",
+          "医生说明"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "无报告时仅给提交清单；模糊数值先核对，不能进行个人化解读。",
+        "offline": "按报告转录并解释术语，不用网络范围冒充本报告标准。",
+        "missing_facts": "缺参考范围不判正常异常；不补个人病史、诊断或复查时间。"
+      }
+    },
+    {
+      "key": "md-02",
+      "id": "MD-02",
+      "category": "MD",
+      "name": "就医前准备",
+      "level": "L2",
+      "use": "看医生前整理好症状和问题，避免见到医生说不清。",
+      "materials": {
+        "required": [
+          "用户口述的症状、复查经过或当前就诊目的"
+        ],
+        "optional": [
+          "已有报告",
+          "用药过敏病史",
+          "拟就诊科室",
+          "担忧"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "没有个人情况时给就医准备表，不替用户填写症状。",
+        "offline": "可整理症状时间线与医生沟通问题，无需联网寻找个人病情。",
+        "missing_facts": "程度、诱因和既往史未知列待确认，不根据症状补诊断。"
+      }
+    },
+    {
+      "key": "md-03",
+      "id": "MD-03",
+      "category": "MD",
+      "name": "健康趋势分析",
+      "level": "L2",
+      "use": "手上有多次体检报告，想看指标变化趋势。",
+      "materials": {
+        "required": [
+          "至少两次带日期的实际报告及可比较的指标数值、单位"
+        ],
+        "optional": [
+          "参考范围",
+          "检测方法与条件",
+          "既有医嘱"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "只有一次数据时仅整理本次报告；缺可比数据不能判趋势。",
+        "offline": "依据报告核对可比性并计算变化，不需要外部人群数据。",
+        "missing_facts": "单位换算关系不明不换算；同步变化不推因果，不造复查安排。"
+      }
+    },
+    {
+      "key": "md-04",
+      "id": "MD-04",
+      "category": "MD",
+      "name": "健康科普文案",
+      "level": "L2",
+      "use": "写健康科普、公众号医学科普、给患者/家属的说明。",
+      "materials": {
+        "required": [
+          "具体科普主题"
+        ],
+        "optional": [
+          "可靠指南、研究或官方科普材料",
+          "篇幅",
+          "读者和传播目的"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "写医学事实、统计和一般就医提示而用户未给充分可靠、适用来源时检索权威资料。"
+      },
+      "fallback": {
+        "missing_materials": "缺主题时先给选题表；缺医学证据时给不含具体统计和处置结论的结构。",
+        "offline": "有可靠材料则据此写作；无材料时只给科普框架与证据清单。",
+        "missing_facts": "无来源数字和临床观察删去；不根据读者身份编个体诊疗方案。"
+      }
+    },
+    {
+      "key": "md-05",
+      "id": "MD-05",
+      "category": "MD",
+      "name": "用药与术后注意事项",
+      "level": "L2",
+      "use": "出院后、开药后，把医嘱和注意事项整理清楚。",
+      "materials": {
+        "required": [
+          "医嘱、处方、出院小结或医生交代的原文，口述需注明来源"
+        ],
+        "optional": [
+          "药品具体制剂版本",
+          "权威说明书"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需补查相互作用、掰药或漏服说明且原医嘱未载明时，核实具体制剂版本的权威说明。"
+      },
+      "fallback": {
+        "missing_materials": "无原始医嘱时仅给信息采集单，不给个人用药安排。",
+        "offline": "只提取已有医嘱；无来源的相互作用等不补充，列医生药师问题。",
+        "missing_facts": "不补缺失剂量疗程与复查时间；模糊冲突待确认，不自停换加药。"
+      }
+    },
+    {
+      "key": "md-06",
+      "id": "MD-06",
+      "category": "MD",
+      "name": "报告口语化转述",
+      "level": "L1",
+      "use": "把检查报告转成老人、家属能听懂的话。",
+      "materials": {
+        "required": [
+          "待转述检查报告内容"
+        ],
+        "optional": [
+          "目标听众",
+          "报告已有行动建议或医嘱"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "无报告时给提交说明；模糊数值不按经验猜读。",
+        "offline": "可将报告事实和术语口语化，不联网补个人结论。",
+        "missing_facts": "严重性与下一步超出原文时列医生问题，不保证整体无事或默认复查间隔。"
+      }
+    },
+    {
+      "key": "md-07",
+      "id": "MD-07",
+      "category": "MD",
+      "name": "症状自查与就医梳理",
+      "level": "L2",
+      "use": "身体不舒服，想在就医前先梳理症状、了解大致方向。",
+      "materials": {
+        "required": [
+          "症状描述（部位、性质、持续、诱因）"
+        ],
+        "optional": [
+          "既往病史",
+          "用药情况"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺症状细节时给就医前的描述清单，不做方向判断。",
+        "offline": "基于症状给就医前梳理，不需要联网。",
+        "missing_facts": "不根据症状下诊断；红旗症状先提示就医。"
+      }
+    },
+    {
+      "key": "ed-01",
+      "id": "ED-01",
+      "category": "ED",
+      "name": "教案设计",
+      "level": "L2",
+      "use": "备一节课，要完整的教学设计。",
+      "materials": {
+        "required": [
+          "学科、年级、章节或教学内容",
+          "课时总时长",
+          "学生基础与必覆盖知识点"
+        ],
+        "optional": [
+          "教材原文",
+          "有效课标",
+          "器材条件"
+        ]
+      },
+      "network": {
+        "mode": "conditional",
+        "condition": "需声称符合现行课标或具体教材版本，而用户未给对应有效材料时检索官方依据。"
+      },
+      "fallback": {
+        "missing_materials": "缺内容年级时给教案输入表；缺学生情况仅给可调活动，不编学情。",
+        "offline": "按已给教学要求设计；未核实课标范围标待查，不保证现行合规。",
+        "missing_facts": "例题须验算；缺器材不写已具备，环节时长按实际总时长分配。"
+      }
+    },
+    {
+      "key": "ed-02",
+      "id": "ED-02",
+      "category": "ED",
+      "name": "出题与组卷",
+      "level": "L2",
+      "use": "出练习题、组卷、出考题。",
+      "materials": {
+        "required": [
+          "学科年级与知识范围",
+          "题型、数量及用途",
+          "要求的分值时长与难度分配"
+        ],
+        "optional": [
+          "教材与课标",
+          "题目样例"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺范围或题量时给命题蓝图填写表；严格比例不可实现时列调整选项，暂停正式组卷。",
+        "offline": "可基于所给知识范围原创题目并逐题验算，不需外部题库。",
+        "missing_facts": "难度是设计预估，不冒充实测；缺课标依据不声称绝对未超纲。"
+      }
+    },
+    {
+      "key": "ed-03",
+      "id": "ED-03",
+      "category": "ED",
+      "name": "作业批改与反馈",
+      "level": "L2",
+      "use": "批改作业、给学生个性化反馈。",
+      "materials": {
+        "required": [
+          "题目与学生原始作答",
+          "标准答案及评分标准"
+        ],
+        "optional": [
+          "学科年级",
+          "允许的解题方法"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺学生答案不能逐题批改；无评分标准可反馈错误，正式给分需先确认口径。",
+        "offline": "依据材料核算与反馈，不以网上通用答案替代实际题目。",
+        "missing_facts": "只定位可见错误步骤；粗心、不会等错因无证据时列核查问题。"
+      }
+    },
+    {
+      "key": "ed-04",
+      "id": "ED-04",
+      "category": "ED",
+      "name": "学情分析",
+      "level": "L2",
+      "use": "分析一次考试/测验的班级成绩，找出薄弱点。",
+      "materials": {
+        "required": [
+          "本次真实总分或各题得分",
+          "数据粒度与评分口径说明"
+        ],
+        "optional": [
+          "各题满分及知识点映射",
+          "合格优秀阈值",
+          "可比历史",
+          "学生作答"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "无成绩时给采集表；只有总分仅做本次分布，不诊断知识点。",
+        "offline": "可计算已有数据支持的统计，不引入外部班级基准。",
+        "missing_facts": "缺阈值不默认及格线；缺历史不判突降，缺作答不认定错因。"
+      }
+    },
+    {
+      "key": "ed-05",
+      "id": "ED-05",
+      "category": "ED",
+      "name": "家校沟通",
+      "level": "L2",
+      "use": "给家长发通知、反馈学生情况、处理家长质疑。",
+      "materials": {
+        "required": [
+          "沟通场景与目标",
+          "实际通知内容或学生相关事实"
+        ],
+        "optional": [
+          "家长已表达的关注",
+          "沟通渠道",
+          "下一步时间"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺事实时给沟通骨架，不能编学生表现或家长投诉内容。",
+        "offline": "按实际情况写沟通文案，不查询学生家庭信息。",
+        "missing_facts": "不猜家长类型和动机；未知面谈时间留待商定，个体负面信息不写群公告。"
+      }
+    },
+    {
+      "key": "ed-06",
+      "id": "ED-06",
+      "category": "ED",
+      "name": "分层教学/差异化",
+      "level": "L2",
+      "use": "同一知识点，给不同水平的学生设计不同难度的任务。",
+      "materials": {
+        "required": [
+          "知识点与年级",
+          "学生已有差异或卡点证据",
+          "课时总时长"
+        ],
+        "optional": [
+          "教材例题",
+          "可用教具",
+          "已有练习"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺知识点时给分层设计表；无学情证据时仅列可调整支持方案，不划定实际学生层级。",
+        "offline": "依据已给目标设计不同脚手架与验证练习。",
+        "missing_facts": "不从分数猜长期能力，支持需求待验证，不设无证据的固定标签。"
+      }
+    },
+    {
+      "key": "ed-07",
+      "id": "ED-07",
+      "category": "ED",
+      "name": "课堂互动设计",
+      "level": "L2",
+      "use": "给一节课设计互动环节，让课堂不干讲。",
+      "materials": {
+        "required": [
+          "学科、年级与教学内容"
+        ],
+        "optional": [
+          "学生人数",
+          "课堂时长",
+          "可用工具"
+        ]
+      },
+      "network": {
+        "mode": "none",
+        "condition": ""
+      },
+      "fallback": {
+        "missing_materials": "缺教学内容时给通用互动形式清单，不设计具体环节。",
+        "offline": "基于内容设计互动，不需要联网。",
+        "missing_facts": "不假定学生基础和班级纪律；人数影响互动形式选择。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "command": "$NODE",
+  "args": ["scripts/codex-adapter.cjs"],
+  "timeout_ms": 110000,
+  "backend": "codex-cli-default-config"
+}
